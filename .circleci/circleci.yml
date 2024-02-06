@@ -21,3 +21,7 @@ workflows:
           filters:
             branches:
               only: master  # Exécuter seulement pour la branche master
+      - test:
+          filters:
+            branches:
+              only: master  # Exécuter seulement pour la branche master
