@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:13-jdk  # Utilisation de l'image Docker avec Java 8
+      - image: circleci/openjdk:8-jdk  # Utilisation de l'image Docker avec Java 8
 
     steps:
       - checkout  # Étape pour récupérer le code du repository
