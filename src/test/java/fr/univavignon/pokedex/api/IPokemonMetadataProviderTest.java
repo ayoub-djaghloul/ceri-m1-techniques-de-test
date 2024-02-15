@@ -1,5 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-public interface IPokemonMetadataProviderTest {
+public class IPokemonMetadataProviderTest {
 
 }
