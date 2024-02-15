@@ -12,6 +12,17 @@ jobs:
           name: Run unit tests
           command: mvn test
 
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk 
+
+    steps:
+      - checkout
+
+      - run:
+          name: Run unit tests
+          command: mvn test
+
 workflows:
   version: 2
   build:
