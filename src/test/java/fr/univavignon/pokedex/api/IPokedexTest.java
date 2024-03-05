@@ -21,9 +21,19 @@ public class IPokedexTest {
     public void setUp() {
         pokedex = mock(IPokedex.class);
 
+        PokemonMetadata example1Metadata = new PokemonMetadata(0, "Bulbizarre", 126, 126, 90);
+        PokemonMetadata example2Metadata = new PokemonMetadata(133, "Aquali", 186, 168, 260);
+
+        Pokemon example1Pokemon = new Pokemon(example1Metadata.getIndex(), example1Metadata.getName(),
+                example1Metadata.getAttack(), example1Metadata.getDefense(), example1Metadata.getStamina(),
+                613, 64, 4000, 4, 0.56);
+        Pokemon example2Pokemon = new Pokemon(example2Metadata.getIndex(), example2Metadata.getName(),
+                example2Metadata.getAttack(), example2Metadata.getDefense(), example2Metadata.getStamina(),
+                2729, 202, 5000, 4, 1.0);
+
         pokemons = new ArrayList<>();
-        pokemons.add(new Pokemon(0, "pikatcho", 100, 100, 100, 632, 100, 4000, 4, 0.66));
-        pokemons.add(new Pokemon(2, "ach", 220, 220, 160, 3000, 200, 20000, 20, 0.9));
+        pokemons.add(example1Pokemon);
+        pokemons.add(example2Pokemon);
     }
 
     @Test

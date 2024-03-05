@@ -15,13 +15,13 @@ public class IPokemonMetadataProviderTest {
 
         try {
             when(pokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(
-                    new PokemonMetadata(0, "Bulbasaur", 126, 126, 90));
+                    new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
 
             PokemonMetadata pokemonMetadata = pokemonMetadataProvider.getPokemonMetadata(0);
 
             assertNotNull(pokemonMetadata);
             assertEquals(0, pokemonMetadata.getIndex());
-            assertEquals("Bulbasaur", pokemonMetadata.getName());
+            assertEquals("Bulbizarre", pokemonMetadata.getName());
             assertEquals(126, pokemonMetadata.getAttack());
             assertEquals(126, pokemonMetadata.getDefense());
             assertEquals(90, pokemonMetadata.getStamina());
