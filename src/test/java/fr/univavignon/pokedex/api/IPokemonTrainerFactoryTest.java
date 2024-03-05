@@ -31,7 +31,7 @@ public class IPokemonTrainerFactoryTest {
 
     @Test
     public void testCreateTrainer() {
-        Team team = mock(Team.class);
+        Team team = Team.MYSTIC;
         PokemonTrainer trainer = trainerFactory.createTrainer("Ash", team, pokedexFactory);
         assertNotNull(trainer);
 
