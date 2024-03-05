@@ -68,13 +68,44 @@ public class IPokedexTest {
     }
 
     @Test
-    public void testGetPokemonsWithComparator() {
+    public void testGetPokemonsWithComparatorCP() {
         Comparator<Pokemon> cpComparator = Comparator.comparingInt(Pokemon::getCp);
         List<Pokemon> sortedPokemons = new ArrayList<>(pokemons);
         sortedPokemons.sort(cpComparator);
 
         when(pokedex.getPokemons(cpComparator)).thenReturn(sortedPokemons);
         List<Pokemon> result = pokedex.getPokemons(cpComparator);
+
+        assertEquals(sortedPokemons.size(), result.size());
+        for (int i = 0; i < sortedPokemons.size(); i++) {
+            assertEquals(sortedPokemons.get(i), result.get(i));
+        }
+
+    }
+
+    @Test
+    public void testGetPokemonsWithComparatorIndex() {
+        Comparator<Pokemon> indexComparator = Comparator.comparingInt(Pokemon::getIndex);
+        List<Pokemon> sortedPokemons = new ArrayList<>(pokemons);
+        sortedPokemons.sort(indexComparator);
+
+        when(pokedex.getPokemons(indexComparator)).thenReturn(sortedPokemons);
+        List<Pokemon> result = pokedex.getPokemons(indexComparator);
+
+        assertEquals(sortedPokemons.size(), result.size());
+        for (int i = 0; i < sortedPokemons.size(); i++) {
+            assertEquals(sortedPokemons.get(i), result.get(i));
+        }
+    }
+
+    @Test
+    public void testGetPokemonsWithComparatorName() {
+        Comparator<Pokemon> nameComparator = Comparator.comparing(Pokemon::getName);
+        List<Pokemon> sortedPokemons = new ArrayList<>(pokemons);
+        sortedPokemons.sort(nameComparator);
+
+        when(pokedex.getPokemons(nameComparator)).thenReturn(sortedPokemons);
+        List<Pokemon> result = pokedex.getPokemons(nameComparator);
 
         assertEquals(sortedPokemons.size(), result.size());
         for (int i = 0; i < sortedPokemons.size(); i++) {
