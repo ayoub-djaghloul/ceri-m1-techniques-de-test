@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -23,8 +24,6 @@ public class IPokedexTest {
         pokemons = new ArrayList<>();
         pokemons.add(new Pokemon(0, "pikatcho", 100, 100, 100, 632, 100, 4000, 4, 0.66));
         pokemons.add(new Pokemon(2, "ach", 220, 220, 160, 3000, 200, 20000, 20, 0.9));
-
-
     }
 
     @Test
@@ -44,7 +43,6 @@ public class IPokedexTest {
 
         assertEquals(expectedIndex, actualIndex);
     }
-
 
     @Test
     public void testGetPokemon() throws PokedexException {

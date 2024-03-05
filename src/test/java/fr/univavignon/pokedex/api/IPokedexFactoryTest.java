@@ -20,6 +20,11 @@ public class IPokedexFactoryTest {
             public IPokedex createPokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
                 return new IPokedex() {
                     @Override
+                    public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
+                        return null;
+                    }
+
+                    @Override
                     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
                         return null;
                     }
@@ -46,12 +51,6 @@ public class IPokedexFactoryTest {
 
                     @Override
                     public List<Pokemon> getPokemons(Comparator<Pokemon> order) {
-                        return null;
-                    }
-
-
-                    @Override
-                    public PokemonMetadata getPokemonMetadata(int id) throws PokedexException {
                         return null;
                     }
                 };
