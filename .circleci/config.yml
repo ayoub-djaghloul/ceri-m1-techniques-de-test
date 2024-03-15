@@ -20,8 +20,8 @@ jobs:
       - checkout
 
       - run:
-          name: Run unit tests
-          command: mvn test
+          name: Run unit tests with coverage
+          command: mvn test jacoco:report
 
   upload-to-codecov:
     docker:
