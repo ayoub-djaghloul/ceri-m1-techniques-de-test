@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Projet sur les techniques de test,fr.univavignon.pokedex.api,Team,0,34,0,0,0,4,0,1,0,1
+Projet sur les techniques de test,fr.univavignon.pokedex.api,PokedexException,4,0,0,0,2,0,1,0,1,0
+Projet sur les techniques de test,fr.univavignon.pokedex.api,PokemonTrainer,0,21,0,0,0,8,0,4,0,4
+Projet sur les techniques de test,fr.univavignon.pokedex.api,PokemonComparators,54,0,0,0,8,0,3,0,3,0
+Projet sur les techniques de test,fr.univavignon.pokedex.api,PokemonMetadata,0,33,0,0,0,12,0,6,0,6
+Projet sur les techniques de test,fr.univavignon.pokedex.api,Pokemon,12,26,0,0,4,8,4,2,4,2
