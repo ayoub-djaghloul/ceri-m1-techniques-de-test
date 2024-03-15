@@ -1,27 +1,30 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@4.0.1
+
 jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
-
     steps:
       - checkout
-
       - run:
-          name: Run unit tests
-          command: mvn test
+          name: Build
+          command: mvn compile
 
   test:
     docker:
       - image: circleci/openjdk:11-jdk
-
     steps:
       - checkout
-
       - run:
-          name: Run unit tests
-          command: mvn test
+          name: Prepare JaCoCo
+          command: mvn jacoco:prepare-agent test jacoco:report
+  codecov/upload:
+    file: target/site/jacoco/jacoco.xml
+
+
 
 workflows:
   version: 2
@@ -35,7 +38,7 @@ workflows:
           filters:
             branches:
               only: master
-  upload-to-codecov:
+  codecov/upload:
     jobs:
       - checkout
       - codecov/upload
