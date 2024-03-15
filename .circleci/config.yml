@@ -23,16 +23,6 @@ jobs:
           name: Run unit tests
           command: mvn test
 
-  upload-to-codecov:
-    docker:
-      - image: circleci/openjdk:11-jdk
-
-    steps:
-        - checkout
-        - run:
-            name: Upload to Codecov
-            command: bash <(curl -s https://codecov.io/bash)
-
 workflows:
   version: 2
   build:
@@ -45,7 +35,3 @@ workflows:
           filters:
             branches:
               only: master
-  upload-to-codecov:
-    jobs:
-      - checkout
-      - codecov/upload
