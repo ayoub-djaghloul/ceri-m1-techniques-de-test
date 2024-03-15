@@ -11,19 +11,11 @@ jobs:
       - checkout
 
       - run:
-          name: Run unit tests
-          command: mvn test
+          name: Run unit tests with code coverage
+          command: mvn clean verify jacoco:report
 
-  test:
-    docker:
-      - image: circleci/openjdk:11-jdk
-
-    steps:
-      - checkout
-
-      - run:
-          name: Run unit tests
-          command: mvn test
+      - codecov/upload:
+          file: target/site/jacoco/jacoco.xml
 
 workflows:
   version: 2
@@ -33,11 +25,3 @@ workflows:
           filters:
             branches:
               only: master
-      - test:
-          filters:
-            branches:
-              only: master
-  upload-to-codecov:
-    jobs:
-      - checkout
-      - codecov/upload
