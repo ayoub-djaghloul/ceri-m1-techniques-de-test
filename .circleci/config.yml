@@ -7,42 +7,38 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
+
     steps:
       - checkout
+
       - run:
-          name: Run unit tests and generate coverage report
-          command: mvn test jacoco:report
+          name: Run unit tests
+          command: mvn test
 
   test:
     docker:
       - image: circleci/openjdk:11-jdk
+
     steps:
       - checkout
+
       - run:
           name: Run unit tests
           command: mvn test
 
 workflows:
-  version: 2.1
-  build_and_test:
+  version: 2
+  build:
     jobs:
       - build:
           filters:
             branches:
               only: master
       - test:
-          requires:
-            - build
           filters:
             branches:
               only: master
   upload-to-codecov:
     jobs:
-      - codecov/upload:
-          context: org-global
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
-
+      - checkout
+      - codecov/upload
