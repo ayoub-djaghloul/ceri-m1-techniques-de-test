@@ -40,7 +40,7 @@ jobs:
           file: ./target/site/jacoco/jacoco.xml
           flags: -X
           name: codecov-umbrella
-          token: $CODECOV_TOKEN
+          token: "1fbf03b6-6c03-4152-8c6e-a0f7c0cc1306"
 
 workflows:
   version: 2.1
