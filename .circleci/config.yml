@@ -42,13 +42,6 @@ jobs:
 
 workflows:
   version: 2.1
-  build_and_test:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
-
   upload-to-codecov:
     jobs:
       - test
