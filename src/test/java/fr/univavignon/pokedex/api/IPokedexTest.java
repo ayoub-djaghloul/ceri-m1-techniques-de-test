@@ -1,7 +1,6 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -52,6 +51,7 @@ public class IPokedexTest {
         int actualIndex = pokedex.addPokemon(newPokemon);
 
         assertEquals(expectedIndex, actualIndex);
+
     }
 
     @Test
@@ -59,6 +59,17 @@ public class IPokedexTest {
         Pokemon pokemon = pokemons.get(0);
         when(pokedex.getPokemon(0)).thenReturn(pokemon);
         assertEquals(pokemon, pokedex.getPokemon(0));
+        assertEquals(pokemon.getName(), pokedex.getPokemon(0).getName());
+        assertEquals(pokemon.getIndex(), pokedex.getPokemon(0).getIndex());
+        assertEquals(pokemon.getAttack(), pokedex.getPokemon(0).getAttack());
+        assertEquals(pokemon.getDefense(), pokedex.getPokemon(0).getDefense());
+        assertEquals(pokemon.getStamina(), pokedex.getPokemon(0).getStamina());
+        assertEquals(pokemon.getCp(), pokedex.getPokemon(0).getCp());
+        assertEquals(pokemon.getHp(), pokedex.getPokemon(0).getHp());
+        assertEquals(pokemon.getDust(), pokedex.getPokemon(0).getDust());
+        assertEquals(pokemon.getCandy(), pokedex.getPokemon(0).getCandy());
+        assertEquals(pokemon.getIv(), pokedex.getPokemon(0).getIv(), 0.0);
+
     }
 
     @Test

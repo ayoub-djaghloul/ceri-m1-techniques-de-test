@@ -51,6 +51,7 @@ public class PokemonComparatorsTest {
 
         assertEquals(613, pokemons.get(0).getCp());
         assertEquals(2729, pokemons.get(1).getCp());
+
     }
 
 
