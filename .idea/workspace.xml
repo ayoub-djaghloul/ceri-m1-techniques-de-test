@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4be30a7-dea1-4468-bc39-f2fd6a6591a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.circleci/codecov.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokedex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokedex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokedexFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokedexFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonMetadataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonMetadataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonTrainerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/IPokemonTrainerFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokedexException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokedexException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/Pokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonComparators.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonComparators.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonMetadata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonTrainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/PokemonTrainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/univavignon/pokedex/api/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokedexTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonMetadataProviderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonMetadataProviderTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/IPokemonTrainerFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/PokemonComparatorsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/univavignon/pokedex/api/PokemonComparatorsTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
