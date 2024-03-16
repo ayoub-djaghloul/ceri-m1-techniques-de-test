@@ -59,23 +59,48 @@ public class IPokedexTest {
         Pokemon pokemon = pokemons.get(0);
         when(pokedex.getPokemon(0)).thenReturn(pokemon);
         assertEquals(pokemon, pokedex.getPokemon(0));
-        assertEquals(pokemon.getName(), pokedex.getPokemon(0).getName());
-        assertEquals(pokemon.getIndex(), pokedex.getPokemon(0).getIndex());
-        assertEquals(pokemon.getAttack(), pokedex.getPokemon(0).getAttack());
-        assertEquals(pokemon.getDefense(), pokedex.getPokemon(0).getDefense());
-        assertEquals(pokemon.getStamina(), pokedex.getPokemon(0).getStamina());
-        assertEquals(pokemon.getCp(), pokedex.getPokemon(0).getCp());
-        assertEquals(pokemon.getHp(), pokedex.getPokemon(0).getHp());
-        assertEquals(pokemon.getDust(), pokedex.getPokemon(0).getDust());
-        assertEquals(pokemon.getCandy(), pokedex.getPokemon(0).getCandy());
-        assertEquals(pokemon.getIv(), pokedex.getPokemon(0).getIv(), 0.0);
-
     }
+
+
 
     @Test
     public void testGetPokemons() {
         when(pokedex.getPokemons()).thenReturn(pokemons);
         assertEquals(pokemons.size(), pokedex.getPokemons().size());
+    }
+
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonWithInvalidIndex() throws PokedexException {
+        when(pokedex.getPokemon(-1)).thenThrow(new PokedexException("Invalid index"));
+        pokedex.getPokemon(-1);
+    }
+
+    @Test
+    public void testGetPokemonHP() throws PokedexException {
+        Pokemon pokemon = pokemons.get(0);
+        when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        assertEquals(pokemon.getHp(), pokedex.getPokemon(0).getHp());
+    }
+
+    @Test
+    public void testGetPokemonDust() throws PokedexException {
+        Pokemon pokemon = pokemons.get(0);
+        when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        assertEquals(pokemon.getDust(), pokedex.getPokemon(0).getDust());
+    }
+
+    @Test
+    public void testGetPokemonCandy() throws PokedexException {
+        Pokemon pokemon = pokemons.get(0);
+        when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        assertEquals(pokemon.getCandy(), pokedex.getPokemon(0).getCandy());
+    }
+
+    @Test
+    public void testGetPokemonIv() throws PokedexException {
+        Pokemon pokemon = pokemons.get(0);
+        when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        assertEquals(pokemon.getIv(), pokedex.getPokemon(0).getIv(), 0.0);
     }
 
     @Test
@@ -93,6 +118,7 @@ public class IPokedexTest {
         }
 
     }
+
 
     @Test
     public void testGetPokemonsWithComparatorIndex() {
