@@ -50,10 +50,11 @@ workflows:
           filters:
             branches:
               only: master
+
   upload-to-codecov:
     jobs:
       - upload-to-codecov:
-        requires:
+          requires:
             - test
             - build
         filters:
