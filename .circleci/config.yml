@@ -49,6 +49,7 @@ workflows:
       - upload-to-codecov:
           requires:
             - test
+            - build
           filters:
             branches:
               only: master
