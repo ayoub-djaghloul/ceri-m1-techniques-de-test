@@ -38,9 +38,7 @@ jobs:
           command: bash <(curl -s https://codecov.io/bash)
       - codecov/upload:
           file: ./target/site/jacoco/jacoco.xml
-          flags: -X
-          name: codecov-umbrella
-          token: "1fbf03b6-6c03-4152-8c6e-a0f7c0cc1306"
+
 
 workflows:
   version: 2.1
