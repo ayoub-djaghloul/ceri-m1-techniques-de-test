@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4be30a7-dea1-4468-bc39-f2fd6a6591a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_ayoub.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_ayoub.md" afterDir="false" />
-    </list>
+    <list default="true" id="e4be30a7-dea1-4468-bc39-f2fd6a6591a5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/ayoub/univ/FRANCE/M1 IA/S2/GENIE LOGICIEL AVANCE/2 PROTOTYPAGE ET INTERFACE UTILISATEUR/projet/Project/Fx-Calendar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
