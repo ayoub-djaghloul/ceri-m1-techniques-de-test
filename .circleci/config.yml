@@ -4,16 +4,6 @@ orbs:
   codecov: codecov/codecov@3.2.3
 
 jobs:
-  docs-build:
-    docker:
-      - image: cimg/openjdk:11.0
-    steps:
-      - checkout
-      - run:
-          name: javadoc
-          command: |
-            mkdir -p docs/apidocs
-            mvn javadoc:javadoc -D maven.javadoc.skip=false -D javadocDirectory=docs/apidocs
   build:
     docker:
       - image: circleci/openjdk:11-jdk
@@ -47,24 +37,26 @@ jobs:
   generate-javadoc:
     docker:
       - image: circleci/openjdk:11-jdk
+
     steps:
       - checkout
-      - attach_workspace:
-          at: target/site
-      - run:
-          name: Generate Javadoc
-          command: mvn javadoc:javadoc
-      - run:
-          name: Configure Git for GitHub access
-          command: |
-            git config --global user.name "ayoub-djaghloul"
-            git config --global user.email "ayoub.djaghloul@alumni.univ-avignon.fr"
+      - run: mvn javadoc:javadoc
       - add_ssh_keys:
           fingerprints:
             - "SHA256:RtlidQXA3xL/33BmRmsHq62Yn7YgWCz6P9QXHs2nxPY"
       - run:
-          name:  Deploy docs to gh-pages branch
-          command: gh-pages --dist target/site/apidocs
+          name: Deploy Javadoc to gh-pages
+          command: |
+            git clone $CIRCLE_REPOSITORY_URL gh-pages
+            cd gh-pages
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git config --global user.name "ayoub-djaghloul"
+            git config --global user.email "ayoub.djaghloul@alumni.univ-avignon.fr"
+            rm -rf *
+            cp -R ../target/site/apidocs/* .
+            git add .
+            git commit -m "Deploy Javadoc [skip ci]"
+            git push origin gh-pages
 
 
 
