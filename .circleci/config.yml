@@ -34,33 +34,6 @@ jobs:
           destination: rapport
 
 
-  generate-javadoc:
-    docker:
-      - image: circleci/openjdk:11-jdk
-
-    steps:
-      - checkout
-      - run: mvn javadoc:javadoc
-      - add_ssh_keys:
-          fingerprints:
-            - "SHA256:RtlidQXA3xL/33BmRmsHq62Yn7YgWCz6P9QXHs2nxPY"
-      - run:
-          name: Deploy Javadoc to gh-pages
-          command: |
-            git clone $CIRCLE_REPOSITORY_URL gh-pages
-            cd gh-pages
-            git checkout gh-pages || git checkout --orphan gh-pages
-            git config --global user.name "ayoub-djaghloul"
-            git config --global user.email "ayoub.djaghloul@alumni.univ-avignon.fr"
-            rm -rf *
-            cp -R ../target/site/apidocs/* .
-            git add .
-            git commit -m "Deploy Javadoc [skip ci]"
-            git push origin gh-pages
-
-
-
-
   upload-to-codecov:
     docker:
       - image: circleci/openjdk:11-jdk
