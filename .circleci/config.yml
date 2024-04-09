@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Publish Javadoc to gh-pages branch
           command: |
-            git clone $CIRCLE_REPOSITORY_URL gh-pages
+            git clone --branch=gh-pages --depth=1 git@github.com:ayoub-djaghloul/ceri-m1-techniques-de-test.git gh-pages
             cd gh-pages
             git checkout gh-pages || git checkout --orphan gh-pages
             git rm -rf .
