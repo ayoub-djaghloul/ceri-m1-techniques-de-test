@@ -21,10 +21,10 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory{
      * @param metaProvider Pokemon metadata provider.
      * @param pokemonFactory Pokemon factory.
      */
-<span class="nc" id="L24">    public PokemonTrainerFactory(IPokemonMetadataProvider metaProvider, IPokemonFactory pokemonFactory){</span>
-<span class="nc" id="L25">        this.metaProvider = metaProvider;</span>
-<span class="nc" id="L26">        this.pokemonFactory = pokemonFactory;</span>
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L24">    public PokemonTrainerFactory(IPokemonMetadataProvider metaProvider, IPokemonFactory pokemonFactory){</span>
+<span class="fc" id="L25">        this.metaProvider = metaProvider;</span>
+<span class="fc" id="L26">        this.pokemonFactory = pokemonFactory;</span>
+<span class="fc" id="L27">    }</span>
 
 
     /**
@@ -36,8 +36,8 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory{
      */
     @Override
     public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {
-<span class="nc" id="L39">        IPokedex pokedex = pokedexFactory.createPokedex(metaProvider, pokemonFactory);</span>
-<span class="nc" id="L40">        return new PokemonTrainer(name, team, pokedex);</span>
+<span class="fc" id="L39">        IPokedex pokedex = pokedexFactory.createPokedex(metaProvider, pokemonFactory);</span>
+<span class="fc" id="L40">        return new PokemonTrainer(name, team, pokedex);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
