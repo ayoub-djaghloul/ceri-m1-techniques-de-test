@@ -10,7 +10,7 @@ Master 1 Informatique - CERI - IA
 
 [![codecov](https://codecov.io/gh/ayoub-djaghloul/ceri-m1-techniques-de-test/branch/master/graph/badge.svg)](https://codecov.io/gh/ayoub-djaghloul/ceri-m1-techniques-de-test)
 
-![Checkstyle Badge](./checkstyle-result.svg")
+<img src="./checkstyle-result.svg"/>
 
 ## Documentation
 
