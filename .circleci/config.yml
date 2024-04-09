@@ -18,13 +18,21 @@ jobs:
   test:
     docker:
       - image: circleci/openjdk:11-jdk
-
     steps:
       - checkout
-
+      - run:
+          name: Install dependencies
+          command: mvn install
+      - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:check
       - run:
           name: Run tests and collect coverage
           command: mvn test jacoco:report
+      - store_artifacts:
+          path: target/site
+          destination: rapport
+
 
   upload-to-codecov:
     docker:
@@ -42,14 +50,12 @@ jobs:
 
 workflows:
   version: 2.1
-  upload-to-codecov:
+  build-and-test:
     jobs:
-      - test
       - build
+      - test:
+          requires:
+            - build
       - upload-to-codecov:
           requires:
             - test
-            - build
-          filters:
-            branches:
-              only: master
