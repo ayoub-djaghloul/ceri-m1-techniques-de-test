@@ -70,6 +70,8 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
+                            <source>11</source>
+                            <target>11</target>
                             <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
                         </configuration>
                     </execution>
