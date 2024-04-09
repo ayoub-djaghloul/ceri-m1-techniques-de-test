@@ -25,10 +25,10 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider{
      * A constructor of the PokemonMetadataProvider class.
      * It initializes the list of Pokemons metadata.
      */
-<span class="fc" id="L28">    public PokemonMetadataProvider() {</span>
-<span class="fc" id="L29">        this.pokemonsMetadata = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L28">    public PokemonMetadataProvider() {</span>
+<span class="nc" id="L29">        this.pokemonsMetadata = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L31">    }</span>
+<span class="nc" id="L31">    }</span>
 
     /**
      * Constructeur of the PokemonMetadataProvider class.
@@ -47,12 +47,12 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider{
      */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="fc bfc" id="L50" title="All 2 branches covered.">        for(PokemonMetadata pokemonMetadata : pokemonsMetadata){</span>
-<span class="fc bfc" id="L51" title="All 2 branches covered.">            if(pokemonMetadata.getIndex() == index){</span>
-<span class="fc" id="L52">                return pokemonMetadata;</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        for(PokemonMetadata pokemonMetadata : pokemonsMetadata){</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">            if(pokemonMetadata.getIndex() == index){</span>
+<span class="nc" id="L52">                return pokemonMetadata;</span>
             }
-<span class="fc" id="L54">        }</span>
-<span class="fc" id="L55">        throw new PokedexException(&quot;Pokemon inexistant dans le Pokedex&quot;);</span>
+<span class="nc" id="L54">        }</span>
+<span class="nc" id="L55">        throw new PokedexException(&quot;Pokemon inexistant dans le Pokedex&quot;);</span>
     }
 
 }

@@ -13,4 +13,5 @@ fr\univavignon\pokedex\api\PokemonFactory.class
 fr\univavignon\pokedex\api\PokemonTrainer.class
 fr\univavignon\pokedex\api\PokemonTrainerFactory.class
 fr\univavignon\pokedex\api\Pokedex.class
+fr\univavignon\pokedex\api\RocketPokemonFactory.class
 fr\univavignon\pokedex\api\Pokemon.class
