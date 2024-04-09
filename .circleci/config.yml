@@ -4,6 +4,16 @@ orbs:
   codecov: codecov/codecov@3.2.3
 
 jobs:
+  docs-build:
+    docker:
+      - image: cimg/openjdk:11.0
+    steps:
+      - checkout
+      - run:
+          name: javadoc
+          command: |
+            mkdir -p docs/apidocs
+            mvn javadoc:javadoc -D maven.javadoc.skip=false -D javadocDirectory=docs/apidocs
   build:
     docker:
       - image: circleci/openjdk:11-jdk
@@ -45,8 +55,8 @@ jobs:
       - run:
           name: Configure Git for GitHub access
           command: |
-            git config --global user.email "you@example.com"
-            git config --global user.name "Your Name"
+            git config --global user.name "ayoub-djaghloul"
+            git config --global user.email "ayoub.djaghloul@alumni.univ-avignon.fr"
       - run:
           name: Publish Javadoc to gh-pages branch
           command: |
