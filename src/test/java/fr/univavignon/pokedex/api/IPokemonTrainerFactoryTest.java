@@ -10,23 +10,14 @@ import static org.mockito.Mockito.mock;
 public class IPokemonTrainerFactoryTest {
 
     private IPokemonTrainerFactory trainerFactory;
+    private PokemonMetadataProvider metadataProvider;
     private IPokedexFactory pokedexFactory;
 
     @Before
     public void setUp() {
-        pokedexFactory = new IPokedexFactory() {
-            @Override
-            public IPokedex createPokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
-        return mock(IPokedex.class);
-            }
-        };
-
-        trainerFactory = new IPokemonTrainerFactory() {
-            @Override
-            public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {
-                return new PokemonTrainer(name, team, pokedexFactory.createPokedex(null, null));
-            }
-        };
+        pokedexFactory = new PokedexFactory();
+        metadataProvider = new PokemonMetadataProvider();
+        trainerFactory = new PokemonTrainerFactory(metadataProvider, new PokemonFactory(metadataProvider));
     }
 
     @Test
