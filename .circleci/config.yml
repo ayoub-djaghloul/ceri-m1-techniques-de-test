@@ -29,15 +29,37 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: mvn test jacoco:report
+      - store_artifacts:
+          path: target/site
+          destination: rapport
+
 
   generate-javadoc:
     docker:
-      - image: circleci/openjdk:11-jdk
+      - image: cimg/openjdk:11.0
     steps:
       - checkout
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
+      - run:
+          name: Configure Git for GitHub access
+          command: |
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
+      - run:
+          name: Publish Javadoc to gh-pages branch
+          command: |
+            git clone $CIRCLE_REPOSITORY_URL gh-pages
+            cd gh-pages
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git rm -rf .
+            cp -a ../target/site/apidocs/. .
+            git add .
+            git commit -m "Auto-publish Javadoc [skip ci]"
+            git push origin gh-pages
+
+
 
 
   upload-to-codecov:
