@@ -56,9 +56,6 @@ workflows:
       - test:
           requires:
             - build
-      - generate-javadoc:
-          requires:
-            - test
       - upload-to-codecov:
           requires:
             - test
