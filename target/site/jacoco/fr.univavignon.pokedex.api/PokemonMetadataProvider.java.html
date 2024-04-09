@@ -2,29 +2,57 @@
 
 import java.util.ArrayList;
 import java.util.List;
+//use english comments
+
+/**
+ * a class that provides metadata for Pokemons.
+ * It implements the IPokemonMetadataProvider interface.
+ * @see IPokemonMetadataProvider
+ * @see PokemonMetadata
+ * @see PokedexException
+ * @see IPokemonMetadataProvider
+ * @author Djaghloul Ayoub
+ */
 
 public class PokemonMetadataProvider implements IPokemonMetadataProvider{
+    /**
+     * A list of PokemonMetadata.
+     * @see PokemonMetadata
+     */
     private List&lt;PokemonMetadata&gt; pokemonsMetadata;
 
-    // Constructeur de la classe PokemonMetadataProvider sans paramètres
-<span class="fc" id="L10">    public PokemonMetadataProvider() {</span>
-<span class="fc" id="L11">        this.pokemonsMetadata = new ArrayList&lt;&gt;();</span>
+    /**
+     * A constructor of the PokemonMetadataProvider class.
+     * It initializes the list of Pokemons metadata.
+     */
+<span class="fc" id="L28">    public PokemonMetadataProvider() {</span>
+<span class="fc" id="L29">        this.pokemonsMetadata = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L31">    }</span>
 
-    // Constructeur de la classe PokemonMetadataProvider
-<span class="fc" id="L16">    PokemonMetadataProvider(List&lt;PokemonMetadata&gt; pokemonMetadata){</span>
-<span class="fc" id="L17">        this.pokemonsMetadata = pokemonMetadata;</span>
-<span class="fc" id="L18">    }</span>
+    /**
+     * Constructeur of the PokemonMetadataProvider class.
+     * @param pokemonMetadata List of Pokemons metadata.
+     * @see PokemonMetadata
+     * @see List
+     * @see ArrayList
+     */
+<span class="fc" id="L40">    PokemonMetadataProvider(List&lt;PokemonMetadata&gt; pokemonMetadata){</span>
+<span class="fc" id="L41">        this.pokemonsMetadata = pokemonMetadata;</span>
+<span class="fc" id="L42">    }</span>
 
+    /**
+     * Method to return the metadata of a Pokemon.
+     * @param index Pokemon metadata to return.
+     */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="fc bfc" id="L22" title="All 2 branches covered.">        for(PokemonMetadata pokemonMetadata : pokemonsMetadata){</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">            if(pokemonMetadata.getIndex() == index){</span>
-<span class="fc" id="L24">                return pokemonMetadata;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        for(PokemonMetadata pokemonMetadata : pokemonsMetadata){</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            if(pokemonMetadata.getIndex() == index){</span>
+<span class="fc" id="L52">                return pokemonMetadata;</span>
             }
-<span class="fc" id="L26">        }</span>
-<span class="fc" id="L27">        throw new PokedexException(&quot;Pokemon inexistant dans le Pokedex&quot;);</span>
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">        throw new PokedexException(&quot;Pokemon inexistant dans le Pokedex&quot;);</span>
     }
 
 }
