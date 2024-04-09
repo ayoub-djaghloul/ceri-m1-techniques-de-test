@@ -49,25 +49,24 @@ jobs:
       - image: circleci/openjdk:11-jdk
     steps:
       - checkout
+      - attach_workspace:
+          at: target/site
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
       - run:
           name: Configure Git for GitHub access
           command: |
+            npm install need sudo
             git config --global user.name "ayoub-djaghloul"
             git config --global user.email "ayoub.djaghloul@alumni.univ-avignon.fr"
+            sudo npm install -g gh-pages --save-dev
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:RtlidQXA3xL/33BmRmsHq62Yn7YgWCz6P9QXHs2nxPY"
       - run:
-          name: Publish Javadoc to gh-pages branch
-          command: |
-            git clone --branch=gh-pages --depth=1 git@github.com:ayoub-djaghloul/ceri-m1-techniques-de-test.git gh-pages
-            cd gh-pages
-            git checkout gh-pages || git checkout --orphan gh-pages
-            git rm -rf .
-            cp -a ../target/site/apidocs/. .
-            git add .
-            git commit -m "Auto-publish Javadoc [skip ci]"
-            git push origin gh-pages
+          name:  Deploy docs to gh-pages branch
+          command: gh-pages --dist target/site/apidocs
 
 
 
